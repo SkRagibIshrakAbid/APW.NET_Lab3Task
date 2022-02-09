@@ -1,0 +1,15 @@
+﻿@model labtaskweek3.Models.Database.News
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+<form action="/News/Update" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" class="form-control" placeholder="Title">
+    <input type="text" name="Title" value="@Model.Title" class="form-control" placeholder="Title">
+    <input type="text" name="Description" value="@Model.Description" class="form-control" placeholder="Description">
+    <input type="text" name="Category" value="@Model.Category" class="form-control" placeholder="Category">
+    <input type="text" name="PublishDate" value="@Model.PublishDate" class="form-control" placeholder="Publish Date">
+    <input type="submit" value="Submit" />
+</form>
+

@@ -1,0 +1,33 @@
+﻿@model List<labtaskweek3.Models.Database.News>
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<form action="/News/Index" method="post">
+    <input type="text" name="Search" class="form-control" placeholder="Search">
+    <input type="submit" value="Search" />
+</form>
+
+<h2>News List</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Publish Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var n in Model)
+    {
+        <tr>
+            <th>@n.Title</th>
+            <th>@n.Description</th>
+            <th>@n.Category</th>
+            <th>@n.PublishDate</th>
+            <th><a href="/News/Update/@n.Id">Update</a></th>
+            <th><a href="/News/Delete/@n.Id">Delete</a></th>
+        </tr>
+    }
+</table>
